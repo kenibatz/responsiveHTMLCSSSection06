@@ -40,6 +40,7 @@
       }
       .pagination {
         margin-top: 100px;
+        /* the centering technique margin: 0 auto only works when the selector has a width property. since we don't need a width property for pagination, we can use flex instead */
         display: flex;
         gap: 20px;
         align-items: center;
@@ -70,13 +71,26 @@
         text-decoration: none;
         height: 36px;
         width: 36px;
+        /* links are inline elements, so height and width won't work unless they have the property:
+        display: inline-block;
+        or
+        display:flex;
+        */
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
       }
+      /* 
+      multiple class selector
+      use the "and selector" on page-link and page-link--current to increase their specificity. 
+      the declaration will only apply if both page-link and page-link--current are in a class. 
+      note that there is no space between the classes
+      selector specificity is shown in VSCode
+      without ".page-link.page-link--current", the color of the text will be black because it inherits the property from a selector with a higher specificity. */
       .page-link:active,
-      .page-link:hover {
+      .page-link:hover,
+      .page-link.page-link--current {
         background-color: #087f5b;
         color: #fff;
       }
@@ -106,7 +120,7 @@
 
       <a href="#" class="page-link">1</a>
       <a href="#" class="page-link">2</a>
-      <a href="#" class="page-link">3</a>
+      <a href="#" class="page-link page-link--current">3</a>
       <a href="#" class="page-link">4</a>
       <a href="#" class="page-link">5</a>
       <span class="page-link-dots">...</span>

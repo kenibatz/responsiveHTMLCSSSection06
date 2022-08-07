@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        font-size: 24px;
+        color: #343a40;
+        height: 100vh;
+        text-align: center;
+        font-weight: bold;
+
+        display: grid;
+        grid-template-columns: 80px 400px 1fr 250px;
+        grid-template-rows: 80px 1fr;
+      }
+      nav,
+      section,
+      main,
+      aside {
+        padding-top: 24px;
+      }
+
+      nav {
+        background-color: #c0c0c0;
+        color: white;
+        grid-row: 1/-1;
+      }
+      menu {
+        background-color: #7048e8;
+        grid-column: 2/-1;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 0 40px;
+      }
+      button {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: #5f3dc4;
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 8px 12px;
+      }
+      button:last-child {
+        /* this will push the last button to the right-most */
+        background-color: #d6336c;
+        margin-left: auto;
+      }
+      section {
+        background-color: #e9ecef;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        /* this will turn this column into a scrollable one */
+        overflow: scroll;
+      }
+      .email {
+        background-color: #adb5bd;
+        height: 96px;
+
+        /* this is used with overflow: scroll
+        and prevents the items from shrinking to fit */
+        flex-shrink: 0;
+
+        /* this will center the text inside the buttons */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      aside {
+        background-color: #e9ecef;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>NAV</nav>
+    <menu>
+      <button>NEW</button>
+      <button>REPLY</button>
+      <button>FORWARD</button>
+      <button>MARK UNREAD</button>
+      <button>TRASH</button>
+    </menu>
+    <section>
+      <div class="email">Email 01</div>
+      <div class="email">Email 02</div>
+      <div class="email">Email 03</div>
+      <div class="email">Email 04</div>
+      <div class="email">Email 05</div>
+      <div class="email">Email 06</div>
+      <div class="email">Email 07</div>
+      <div class="email">Email 08</div>
+      <div class="email">Email 09</div>
+      <div class="email">Email 10</div>
+    </section>
+    <main>Email View</main>
+    <aside>Additional Video</aside>
+  </body>
+</html>
